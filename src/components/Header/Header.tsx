@@ -5,10 +5,10 @@ import { useState } from "react"
 import { Cart } from "../Cart/Cart"
 
 export const Header = () => {
-  const [showCart, setShowCart] = useState(false);
+  const [showCart, setShowCart] = useState(localStorage.getItem('ShowCart') ?  localStorage.getItem('ShowCart') : false);
 
   const handleCart = () => {
-    console.log("Mostrar carrito");
+    localStorage.setItem('ShowCart', 'true')
     setShowCart(!showCart);
   }
   return (
