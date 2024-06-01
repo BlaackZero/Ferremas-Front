@@ -6,7 +6,7 @@ export const HeaderContainer = styled.nav`
     position: sticky;
     display: flex;
     justify-content: center;
-    background-color: ${color.altertext};
+    background-color: ${color.text};
 
     section {
         width: 100%;
@@ -18,12 +18,24 @@ export const HeaderContainer = styled.nav`
 
         ul {
             display: flex;
-            gap: 12px;
+            gap: 32px;
 
             li {
                 color: ${color.background};
 
+                .cartButton {
+                    cursor: pointer;
+                    p {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    }
+                }
+
                 a {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
                     color: ${color.background};
                     text-decoration: none;
 

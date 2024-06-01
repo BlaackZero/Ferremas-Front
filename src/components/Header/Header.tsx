@@ -1,8 +1,18 @@
+import { IconBuildingStore, IconHome, IconPhone, IconShoppingCart } from "@tabler/icons-react"
 import { HeaderContainer } from "./style"
 import { NavLink } from 'react-router-dom'
+import { useState } from "react"
+import { Cart } from "../Cart/Cart"
 
 export const Header = () => {
+  const [showCart, setShowCart] = useState(false);
+
+  const handleCart = () => {
+    console.log("Mostrar carrito");
+    setShowCart(!showCart);
+  }
   return (
+    <>
     <HeaderContainer>
         <section>
             <div>
@@ -11,19 +21,30 @@ export const Header = () => {
             <ul>
                 <li>
                   <NavLink to={'/'}>
-                    Inicio
+                    Inicio <IconHome size={24} stroke={2}/>
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to={'/Productos'}>
-                    Productos
+                    Productos <IconBuildingStore size={24} stroke={2}/>
                   </NavLink>
                 </li>
-                <li>Ofertas</li>
-                <li>Contacto</li>
-                <li>Mi carrito</li>
+                <li>
+                  <NavLink to={'/Contacto'}>
+                    Contacto <IconPhone size={24} stroke={2}/>
+                  </NavLink>
+                </li>
+                <li>
+                  <div className="cartButton" onClick={() => handleCart()}>
+                    <p>
+                      Mi Carrito <IconShoppingCart size={24} stroke={2}/>
+                    </p>
+                  </div>
+                </li>
             </ul>
         </section>
     </HeaderContainer>
+    {showCart && <Cart/>}
+    </>
   )
 }

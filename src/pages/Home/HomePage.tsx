@@ -1,4 +1,5 @@
 import { Header } from "../../components/Header/Header"
+import { LastProducts } from "../../components/LastProducts/LastProducts"
 import { MainLayout } from "../../layout/MainLayout"
 
 
@@ -7,7 +8,9 @@ export const HomePage = () => {
     <>
       <Header/>
       <MainLayout>
-        HomePage
+        <section>
+          <LastProducts/>
+        </section>
       </MainLayout>
     </>
   )

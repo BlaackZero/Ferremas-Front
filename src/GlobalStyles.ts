@@ -3,9 +3,9 @@ import { createGlobalStyle } from "styled-components";
 export const color = {
     primary: '#0ead69',
     secondary: '#946846',
-    background: '#2C363F',
-    text: '#f2f5ea',
-    altertext: '#D6DBD2'
+    background: '#D6DBD2',
+    text: '#2C363F',
+    altertext: '#F2F5EA'
 }
 
 export const GlobalStyles = createGlobalStyle`
